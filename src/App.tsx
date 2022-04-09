@@ -1,15 +1,13 @@
 import React from 'react';
 import './App.css';
-import {fetchPokemonsData} from "./FetchPokemons"
+import { MainPage } from './Components/MainPage';
 
-type Props = {}
 
-export default function App({}: Props) {
-  fetchPokemonsData(1)
 
+export const App: React.FC = () => {
   return (
-    <div>
-      <p>hello world</p>
-    </div>
+    <>
+      <MainPage/>
+    </>
   )
 }

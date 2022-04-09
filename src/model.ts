@@ -1,8 +1,10 @@
+import { PokemonType } from "./Utils/ColorsUtils";
+
 export type Pokemon = {
     name: string;
     id: number;
     image: string;
-    type: string[];
+    type: PokemonType[];
     height: number;
     weight: number;
     stats: PokemonStats

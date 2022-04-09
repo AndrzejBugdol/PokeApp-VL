@@ -1,6 +1,6 @@
-import { Pokemon, PokeApiResponse } from "./model";
+import { Pokemon, PokeApiResponse } from "../model";
 
-export const fetchPokemonsData = (firstPokemonID:number) => {
+export const fetchPokemonsData = async (firstPokemonID:number) => {
   let listOfPokemons: Pokemon[] = [];
   let lastPokemonID: number = firstPokemonID+19;
  
@@ -13,7 +13,7 @@ export const fetchPokemonsData = (firstPokemonID:number) => {
     .then((response)=>response.json()))
   }
 
-  Promise.all(listOfPromises)
+  await Promise.all(listOfPromises)
     .then(data=>{
       const mapPokemons: Pokemon[] = data.map((data:PokeApiResponse)=>({
         name: data.name.charAt(0).toUpperCase() + data.name.slice(1),
@@ -33,7 +33,5 @@ export const fetchPokemonsData = (firstPokemonID:number) => {
         }))
         listOfPokemons.push(...mapPokemons)
       });
-
-    console.log(listOfPokemons)
     return listOfPokemons;
 }
