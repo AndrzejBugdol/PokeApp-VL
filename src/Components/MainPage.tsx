@@ -4,17 +4,19 @@ import { Pokemon } from '../model'
 import { fetchPokemonsData } from './FetchPokemons'
 import { PokeList } from './PokeList'
 
-const Container = styled.div`
+export const Container = styled.div`
 display:flex;
 flex-direction:column;
 margin: 0 5vw;
 align-items: center;
+min-height:80vh;
+flex-grow:1;
 `
 const MainButton = styled.button`
 appearance:none;
-color:white;
-background-color: rgb(90, 90, 90);
-border:none;
+color:black;
+background-color: white;
+border: 2px solid rgb(90, 90, 90);
 border-radius: 15px;
 padding:10px;
 font:inherit;
@@ -22,7 +24,12 @@ margin:0;
 cursor: pointer;
 text-align:center;
 min-width:10%;
-margin: 5vh
+margin: 7vh;
+transition: all 0.2s linear;
+
+&:hover{
+  background-color: #f3efef;
+}
 `
 
 export const MainPage: React.FC = () => {

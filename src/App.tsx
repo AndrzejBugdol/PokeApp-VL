@@ -1,13 +1,23 @@
 import React from 'react';
 import './App.css';
+import { Footer } from './Components/Footer';
 import { MainPage } from './Components/MainPage';
+import {  BrowserRouter as Router  , Route , Routes} from "react-router-dom";
+import { NavigationBar } from './Components/NavigationBar';
+import { AboutPage } from './Components/AboutPage'
+
 
 
 
 export const App: React.FC = () => {
   return (
-    <>
-      <MainPage/>
-    </>
+    <Router>
+      <NavigationBar/>
+      <Routes>
+        <Route path='/' element={<MainPage/>}/>
+        <Route path='/about' element={<AboutPage/>}/>
+      </Routes>
+      <Footer/>
+    </Router>
   )
 }

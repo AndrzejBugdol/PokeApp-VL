@@ -12,6 +12,11 @@ code {
     monospace;
 }
 
+li > a {
+  color: black;
+  text-decoration: none;
+}
+
 .card-icon {
   font-size: 2rem;
   /* background: linear-gradient(135deg, #d64545 40%, #ef8200); */

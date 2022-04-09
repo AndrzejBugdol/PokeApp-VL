@@ -10,7 +10,7 @@ const spin = keyframes`
   
   const LoadingDiv = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 80vh;
   display:flex;
   justify-content:center;
   align-items:center;
@@ -22,7 +22,7 @@ const spin = keyframes`
   height:auto;
   width: 10%;
   opacity: 0.2;
-  animation: ${spin} 1.5s ease-in-out infinite;
+  animation: ${spin} .5s ease-in-out infinite;
   `
 
 export const Loading:React.FC = () => {
