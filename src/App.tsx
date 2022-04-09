@@ -1,12 +1,15 @@
 import React from 'react';
 import './App.css';
+import {fetchPokemonsData} from "./FetchPokemons"
 
-function App() {
+type Props = {}
+
+export default function App({}: Props) {
+  fetchPokemonsData(1)
+
   return (
-    <>
-    <p>Hello world!</p>
-    </>
-  );
+    <div>
+      <p>hello world</p>
+    </div>
+  )
 }
-
-export default App;
