@@ -34,7 +34,7 @@ padding:3vh 5vw;
 width:100%;
 border-bottom:2px solid black;
 flex-wrap: wrap;
-justify-content: space-around;
+justify-content: flex-start;
 background: rgb(60, 60, 60,0.3)
 `
 
