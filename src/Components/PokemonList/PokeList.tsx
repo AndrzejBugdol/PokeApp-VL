@@ -1,8 +1,8 @@
 import React, {useState,useEffect} from 'react'
-import {Pokemon} from "../model"
-import { Loading } from './Loading'
+import {Pokemon} from "../../model"
+import { Loading } from '../Loading'
 import { TypeFilter } from './TypeFilter'
-import { PokemonType } from '../Utils/ColorsUtils'
+import { PokemonType } from '../../Utils/ColorsUtils'
 import { TypedPokeList } from './TypedPokeList'
 
 
@@ -39,8 +39,8 @@ export const PokeList = ({listOfPokemons,errorFlag}: Props) => {
 
   return (
     <>
-    <TypeFilter callback={addTypes} clearAll={clearTypes}/>
-    <TypedPokeList listOfPokemons={activePokemons}></TypedPokeList>
+      <TypeFilter callback={addTypes} clearAll={clearTypes}/>
+      <TypedPokeList listOfPokemons={activePokemons}></TypedPokeList>
     </>
   )
 }

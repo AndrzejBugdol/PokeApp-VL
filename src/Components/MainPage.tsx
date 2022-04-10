@@ -1,8 +1,8 @@
 import React,{useState,useEffect} from 'react'
 import styled from 'styled-components'
 import { Pokemon } from '../model'
-import { fetchPokemonsData } from './FetchPokemons'
-import { PokeList } from './PokeList'
+import { fetchPokemonsData } from './PokemonList/FetchPokemons'
+import { PokeList } from './PokemonList/PokeList'
 
 export const Container = styled.div`
 display:flex;
@@ -74,8 +74,8 @@ export const MainPage: React.FC = () => {
       {displayError?
       <ErrorBlock>Failed to load the data.</ErrorBlock>:
       <>
-      <PokeList listOfPokemons={currentPokemons} errorFlag={displayError}/>
-      <MainButton onClick={addMorePokemonsButtonHandler}>Load more</MainButton>
+        <PokeList listOfPokemons={currentPokemons} errorFlag={displayError}/>
+        <MainButton onClick={addMorePokemonsButtonHandler}>Load more</MainButton>
       </>
       }
     </Container>

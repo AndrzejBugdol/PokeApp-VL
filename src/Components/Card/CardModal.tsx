@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Pokemon } from '../model'
-import {CardBackgroundColor} from '../Utils/ColorsUtils'
+import { Pokemon } from '../../model'
+import {CardBackgroundColor} from '../../Utils/ColorsUtils'
 import { ProgressBar } from './ProgressBar'
 import { TypeComponent } from './TypeComponent'
 

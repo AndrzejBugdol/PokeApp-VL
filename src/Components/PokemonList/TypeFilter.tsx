@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import {CardBackgroundColor, PokemonType} from '../Utils/ColorsUtils'
+import {CardBackgroundColor, PokemonType} from '../../Utils/ColorsUtils'
 
 
 const TypeButton = styled.button<{background: string}>`

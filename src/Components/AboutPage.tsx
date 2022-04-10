@@ -33,6 +33,6 @@ export const AboutPage = () => {
         -Styled Components<br/>
         -React Router <br/>
       </H5>
-        </Container>
+    </Container>
   )
 }

@@ -42,3 +42,9 @@ export type PokeApiResponse = {
     types: any[]
     weight: number
   }
+
+ export type ThemeType = {
+    color: string;
+    background: string;
+    shadow:string;
+}

@@ -1,4 +1,4 @@
-import { Pokemon, PokeApiResponse } from "../model";
+import { Pokemon, PokeApiResponse } from "../../model";
 
 export const fetchPokemonsData = async (firstPokemonID:number) => {
   let listOfPokemons: Pokemon[] = [];

@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import styled from 'styled-components'
-import {CardBackgroundColor, PokemonType} from "../Utils/ColorsUtils"
-import { Pokemon } from '../model'
+import {CardBackgroundColor, PokemonType} from "../../Utils/ColorsUtils"
+import { Pokemon } from '../../model'
 import { CardModal } from './CardModal'
 
 const CardDiv = styled.div`

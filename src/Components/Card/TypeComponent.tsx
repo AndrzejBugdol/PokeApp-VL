@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import {CardBackgroundColor, PokemonType} from "../Utils/ColorsUtils"
+import {CardBackgroundColor, PokemonType} from "../../Utils/ColorsUtils"
 
 const Stamp = styled.div<{background: string}>`
     font-family:"Overpass";

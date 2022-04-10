@@ -1,8 +1,8 @@
 import React, {useState,useEffect} from 'react'
-import { PokemonType } from '../Utils/ColorsUtils'
+import { PokemonType } from '../../Utils/ColorsUtils'
 import { SearchBar } from './SearchBar'
-import { Card } from './Card'
-import {Pokemon} from "../model"
+import { Card } from '../Card/Card'
+import {Pokemon} from "../../model"
 import styled from 'styled-components'
 
 const PokesList = styled.div`
