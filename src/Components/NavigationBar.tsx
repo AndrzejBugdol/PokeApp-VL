@@ -43,8 +43,8 @@ export const NavigationBar:React.FC = () => {
     <Nav>
         <Header>PokeApp</Header>
         <Ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About</Link></li>
+          <li><Link to="/PokeApp-VL">Home</Link></li>
+          <li><Link to="/PokeApp-VL/about">About</Link></li>
           <li>
             {DarkThemeContext.isDarkMode?
             <Icon style={{WebkitTextFillColor: "rgba(0,0,0, 0.7)"}} onClick={DarkThemeContext.toggleDarkMode} className="fa fa-certificate"></Icon>:
