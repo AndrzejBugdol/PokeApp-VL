@@ -34,19 +34,30 @@ transition: all 0.2s linear;
 }
 `
 
+const ErrorBlock = styled.div`
+display:flex;
+flex-direction:column;
+padding: 0 5vw;
+align-items: center;
+min-height:10vh;
+flex-grow:1;
+background-color: linear-gradient(135deg, #D64545 40%, #EE4D4D);
+transition: background-color 0.5s linear;
+`
+
 export const MainPage: React.FC = () => {
   const [indexOfFirstPokemon,setIndexOfFirstPokemon] = useState<number>(1);
   const [currentPokemons,setcurrentPokemons] = useState<Pokemon[]>([]);
+  const [displayError,setdisplayError] = useState<boolean>(false);
 
   
   useEffect(() => {
     const fetchData = async () => {
       try {const response = await fetchPokemonsData(indexOfFirstPokemon)
         setcurrentPokemons((prev)=> [...prev,...response])
-        
-    } 
+    }
       catch(error) {
-        console.log(error)
+        setdisplayError(true);
       }
     }
     fetchData();
@@ -58,6 +69,7 @@ export const MainPage: React.FC = () => {
   
   return (
     <Container>
+      {displayError && <ErrorBlock>Failed to load the data.</ErrorBlock>}
       <PokeList listOfPokemons={currentPokemons}/>
       <MainButton onClick={addMorePokemonsButtonHandler}>Load more</MainButton>
     </Container>

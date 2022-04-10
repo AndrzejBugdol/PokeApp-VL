@@ -22,7 +22,7 @@ const spin = keyframes`
   height:auto;
   width: 10%;
   opacity: 0.2;
-  animation: ${spin} .5s ease-in-out infinite;
+  animation: ${spin} .8s ease-in-out infinite;
   `
 
 export const Loading:React.FC = () => {

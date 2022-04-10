@@ -1,4 +1,4 @@
-import React,{useContext} from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { Link } from "react-router-dom";
 import { useDarkThemeContext } from './ToggleDarkModeProvider'
@@ -10,8 +10,7 @@ align-items:center;
 width:100%;
 height:10vh;
 background:white;
-box-shadow: ${props => props.theme.shadow};
-margin-bottom:1vh;
+border-bottom: 2px solid black;
 transition: all 0.5s linear;
 `
 const Header = styled.h1`

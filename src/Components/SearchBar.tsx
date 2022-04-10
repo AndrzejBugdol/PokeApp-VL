@@ -2,6 +2,7 @@ import React, { useRef } from 'react'
 import styled from 'styled-components'
 
 const TopBox = styled.div`
+margin:1rem;
 padding: 1rem;
 display:flex;
 flex-direction:column;

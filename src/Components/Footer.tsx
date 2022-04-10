@@ -10,7 +10,7 @@ const FooterDiv = styled.div`
   width:100%;
   height:10vh;
   background:white;
-  box-shadow:0px -5px 40px #00000029;
+  border-top: 2px solid black;
   `
   const Header = styled.h1`
   font-size: 1.5rem;
