@@ -22,7 +22,7 @@ justify-content: space-between;
 background: ${props => props.background};
 padding: 0 1em;
 border-radius: 15px 15px 0 0;
-height:100%
+height:70%
 `
 
 const BottomBlock = styled.div`
@@ -30,6 +30,7 @@ display: flex;
 flex-direction: row;
 justify-content: space-between;
 background: ${props => props.theme.background};
+transition: all 0.5s linear;
 padding: 0.3em 1em;
 border-radius: 0 0 15px 15px;
 align-items:center;
@@ -63,6 +64,7 @@ min-width: 90px
 const DefButton = styled.button`
 appearance:none;
 color:${props => props.theme.color};
+transition: all 0.5s linear;
 background-color: transparent;
 border: none;
 font:inherit;

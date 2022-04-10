@@ -10,8 +10,9 @@ align-items:center;
 width:100%;
 height:10vh;
 background:white;
-box-shadow:0px 3px 6px #00000029;
+box-shadow: ${props => props.theme.shadow};
 margin-bottom:1vh;
+transition: all 0.5s linear;
 `
 const Header = styled.h1`
 font-size: 2rem;

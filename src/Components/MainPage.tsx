@@ -12,12 +12,13 @@ align-items: center;
 min-height:79vh;
 flex-grow:1;
 background-color:${props => props.theme.background};
+transition: background-color 0.5s linear;
 `
 const MainButton = styled.button`
 appearance:none;
-color:black;
-background-color: white;
-border: 2px solid rgb(90, 90, 90);
+color:${props => props.theme.color};
+background-color: ${props => props.theme.background};
+border: 2px solid ${props => props.theme.color};
 border-radius: 15px;
 padding:10px;
 font:inherit;

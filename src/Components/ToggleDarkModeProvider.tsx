@@ -12,7 +12,8 @@ type Props = {
 
 type ThemeType = {
     color: string;
-    background: string
+    background: string;
+    shadow:string;
 }
 
 export const DarkThemeContext = createContext<DarkModeType>({
@@ -24,12 +25,14 @@ export const useDarkThemeContext = () => useContext(DarkThemeContext)
 
 const darkTheme: ThemeType = {
     color: "white",
-    background: "rgba(0,0,0, 0.7)",
+    background: "rgb(60, 60, 60)",
+    shadow:"0px 5px 5px white"
 }
 
 const lightTheme: ThemeType = {
-    color: "rgba(0,0,0, 0.7)",
+    color: "rgb(60, 60, 60)",
     background: "white",
+    shadow: "0px 5px 5px #00000029"
 }
 export const ToggleDarkModeProvider:React.FC<Props> = ({ children }:Props) => {
     const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
