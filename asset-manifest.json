@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/PokeApp-VL/static/css/main.103afca7.css",
+    "main.js": "/PokeApp-VL/static/js/main.225ca4a9.js",
+    "static/media/Pokeball.png": "/PokeApp-VL/static/media/Pokeball.641edbc0412771eda28d.png",
+    "index.html": "/PokeApp-VL/index.html",
+    "main.103afca7.css.map": "/PokeApp-VL/static/css/main.103afca7.css.map",
+    "main.225ca4a9.js.map": "/PokeApp-VL/static/js/main.225ca4a9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.103afca7.css",
+    "static/js/main.225ca4a9.js"
+  ]
+}
