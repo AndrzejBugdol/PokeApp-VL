@@ -19,7 +19,6 @@ li > a {
 
 .card-icon {
   font-size: 2rem;
-  /* background: linear-gradient(135deg, #d64545 40%, #ef8200); */
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent;
 }

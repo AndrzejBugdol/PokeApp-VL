@@ -22,14 +22,14 @@ justify-content: space-between;
 background: ${props => props.background};
 padding: 0 1em;
 border-radius: 15px 15px 0 0;
-height:75%
+height:100%
 `
 
-const BottomBlock = styled.div<{background: string}>`
+const BottomBlock = styled.div`
 display: flex;
 flex-direction: row;
 justify-content: space-between;
-background: ${props => props.background};
+background: ${props => props.theme.background};
 padding: 0.3em 1em;
 border-radius: 0 0 15px 15px;
 align-items:center;
@@ -62,7 +62,7 @@ min-width: 90px
 `
 const DefButton = styled.button`
 appearance:none;
-color:black;
+color:${props => props.theme.color};
 background-color: transparent;
 border: none;
 font:inherit;
@@ -96,7 +96,7 @@ export const Card: React.FC<Props> = ({pokemon}:Props) => {
         </div>
         <Image src={image} alt={name}></Image>
       </TopBlock>
-      <BottomBlock background="white">
+      <BottomBlock>
       <DefButton onClick={()=>setmodalIsOpen(true)}><i className="fa fa-info-circle card-icon" style={{background:CardBackgroundColor[type[0]]}}></i> Show details</DefButton>
       {modalIsOpen ? <CardModal pokemon={pokemon} onClose={()=>setmodalIsOpen(false)}></CardModal> : null}
       </BottomBlock>

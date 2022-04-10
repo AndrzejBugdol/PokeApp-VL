@@ -7,10 +7,11 @@ import { PokeList } from './PokeList'
 export const Container = styled.div`
 display:flex;
 flex-direction:column;
-margin: 0 5vw;
+padding: 0 5vw;
 align-items: center;
-min-height:80vh;
+min-height:79vh;
 flex-grow:1;
+background-color:${props => props.theme.background};
 `
 const MainButton = styled.button`
 appearance:none;
