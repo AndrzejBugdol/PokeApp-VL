@@ -1,5 +1,7 @@
 # PokeApp
 
+App preview available here: [PokeApp](http://AndrzejBugdol.github.io/PokeApp-VL)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 Welcome to my PokeApp. Simple React application to explore the world of Pokemons!
