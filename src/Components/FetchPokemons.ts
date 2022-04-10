@@ -4,21 +4,21 @@ export const fetchPokemonsData = async (firstPokemonID:number) => {
   let listOfPokemons: Pokemon[] = [];
   let lastPokemonID: number = firstPokemonID+19;
   let errorMessage: string = "";
- 
+
   const listOfPromises: any[] = [];
   
  
     
-    for (let i=firstPokemonID;i<=lastPokemonID;i++){
+    PromisesLoop: for (let i=firstPokemonID;i<=lastPokemonID;i++) {
     const URL: string = `https://pokeapi.co/api/v2/pokemon/${i}`;
-  
     
     listOfPromises.push(
-      fetch(URL)
+      await fetch(URL)
       .then((response)=>response.json())
       .catch((error) => { 
-        return error
-      }))
+        errorMessage=error
+        }))  
+    if(errorMessage!=="") break PromisesLoop
     }
   
   

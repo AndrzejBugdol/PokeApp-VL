@@ -1,37 +1,19 @@
 import React, {useState,useEffect} from 'react'
 import {Pokemon} from "../model"
-import styled from 'styled-components'
-import { Card } from './Card'
-import { SearchBar } from './SearchBar'
 import { Loading } from './Loading'
 import { TypeFilter } from './TypeFilter'
 import { PokemonType } from '../Utils/ColorsUtils'
+import { TypedPokeList } from './TypedPokeList'
 
-const PokesList = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1%;
-    justify-content: space-around;
-    `
 
 type Props = {
-    listOfPokemons: Pokemon[]
+    listOfPokemons: Pokemon[];
+    errorFlag: boolean;
 }
 
-export const PokeList = ({listOfPokemons}: Props) => {
-  const [searchValue,setSearchVal] = useState<string>("");
+export const PokeList = ({listOfPokemons,errorFlag}: Props) => {
   const [typeValue,setTypeValue] = useState<string[]>([]);
   const [activePokemons,setActivePokemons] = useState<Pokemon[]>([]);
-
-  useEffect(() => {
-    if (searchValue.length>1){
-      setActivePokemons(listOfPokemons.filter(e=>e.name.toLowerCase().includes(searchValue.toLowerCase())))
-    } else {
-      setActivePokemons(listOfPokemons)
-    }
-  }, [searchValue,listOfPokemons])
-
-  
   
   const addTypes=(type:PokemonType) =>{
     if(typeValue.includes(type)) {
@@ -53,16 +35,12 @@ export const PokeList = ({listOfPokemons}: Props) => {
     }
   }, [typeValue,listOfPokemons])
   
-  if(!listOfPokemons[0]) return <Loading/>
-  
+  if(!listOfPokemons[0] && !errorFlag) return <Loading/>
+
   return (
     <>
     <TypeFilter callback={addTypes} clearAll={clearTypes}/>
-    <SearchBar setSearchValue={setSearchVal}/>
-    <PokesList>
-        {activePokemons.map((element)=><Card key={element.id} pokemon={element}></Card>)}
-      </PokesList>
-
+    <TypedPokeList listOfPokemons={activePokemons}></TypedPokeList>
     </>
   )
 }

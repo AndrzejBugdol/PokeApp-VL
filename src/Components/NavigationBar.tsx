@@ -30,6 +30,10 @@ align-items: center
 const Icon = styled.i`
 font-size: 1.5rem;
   -webkit-background-clip: text !important;
+  
+  &:hover {
+    cursor:pointer
+  }
 `
 
 export const NavigationBar:React.FC = () => {

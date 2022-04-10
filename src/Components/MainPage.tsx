@@ -37,11 +37,12 @@ transition: all 0.2s linear;
 const ErrorBlock = styled.div`
 display:flex;
 flex-direction:column;
-padding: 0 5vw;
+border-radius: 15px;
+color:white;
+margin-top: 3vh;
+padding: 3vh 3vw;
 align-items: center;
-min-height:10vh;
-flex-grow:1;
-background-color: linear-gradient(135deg, #D64545 40%, #EE4D4D);
+background: linear-gradient(135deg, #D64545 40%, #EE4D4D);
 transition: background-color 0.5s linear;
 `
 
@@ -53,11 +54,12 @@ export const MainPage: React.FC = () => {
   
   useEffect(() => {
     const fetchData = async () => {
-      try {const response = await fetchPokemonsData(indexOfFirstPokemon)
+      const response = await fetchPokemonsData(indexOfFirstPokemon)
+      if(response.length!==0) {
         setcurrentPokemons((prev)=> [...prev,...response])
-    }
-      catch(error) {
-        setdisplayError(true);
+        setdisplayError(false)
+      } else {
+        setdisplayError(true)
       }
     }
     fetchData();
@@ -69,9 +71,13 @@ export const MainPage: React.FC = () => {
   
   return (
     <Container>
-      {displayError && <ErrorBlock>Failed to load the data.</ErrorBlock>}
-      <PokeList listOfPokemons={currentPokemons}/>
+      {displayError?
+      <ErrorBlock>Failed to load the data.</ErrorBlock>:
+      <>
+      <PokeList listOfPokemons={currentPokemons} errorFlag={displayError}/>
       <MainButton onClick={addMorePokemonsButtonHandler}>Load more</MainButton>
+      </>
+      }
     </Container>
   )
 }

@@ -20,15 +20,14 @@ padding: 10px 0;
 line-height:3rem;
 margin-bottom: 5%;
 text-align: center;
-
 `
 
 export const AboutPage = () => {
   return (
     <Container>
       <H1>Hi there!</H1>
-      <H5>Welcome to my PokeApp. Simple React application to explore the world of Pokemons! 
-        <br/>
+      <H5>Welcome to my PokeApp. Simple React application to explore the world of Pokemons! <br/>
+      This app has been created for the recruitment purpose.<br/><br/>
         Used Technologies:<br/>
         -Typescript<br/>
         -Styled Components<br/>
