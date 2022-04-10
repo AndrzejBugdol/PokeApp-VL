@@ -16,8 +16,8 @@ export const App: React.FC = () => {
       <Router>
         <NavigationBar/>
         <Routes>
-          <Route path='/' element={<MainPage/>}/>
-          <Route path='/about' element={<AboutPage/>}/>
+          <Route path='/PokeApp-VL' element={<MainPage/>}/>
+          <Route path='/PokeApp-VL/about' element={<AboutPage/>}/>
         </Routes>
         <Footer/>
       </Router>

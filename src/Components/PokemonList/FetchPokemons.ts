@@ -7,8 +7,7 @@ export const fetchPokemonsData = async (firstPokemonID:number) => {
 
   const listOfPromises: any[] = [];
   
- 
-    
+
     PromisesLoop: for (let i=firstPokemonID;i<=lastPokemonID;i++) {
     const URL: string = `https://pokeapi.co/api/v2/pokemon/${i}`;
     
