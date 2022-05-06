@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Container } from './MainPage'
+import { Container } from './MainPageStyles'
 
 const H1=styled.h1`
 font-size: 4rem;
