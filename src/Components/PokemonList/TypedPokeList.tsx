@@ -1,5 +1,4 @@
 import React, {useState,useEffect} from 'react'
-import { PokemonType } from '../../Utils/ColorsUtils'
 import { SearchBar } from './SearchBar'
 import { Card } from '../Card/Card'
 import {Pokemon} from "../../model"
