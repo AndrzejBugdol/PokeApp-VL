@@ -1,4 +1,4 @@
-import React, {useState,createContext,useContext} from 'react'
+import React, {useState,createContext,useContext, useEffect} from 'react'
 import { ThemeProvider } from "styled-components";
 import { darkTheme,lightTheme } from '../Utils/Themes'
 
@@ -24,8 +24,16 @@ export const ToggleDarkModeProvider:React.FC<Props> = ({ children }:Props) => {
 
     const toggleDarkMode = () =>{
         setIsDarkMode(!isDarkMode)
+        sessionStorage.setItem("DarkMode", isDarkMode.toString());
     }
 
+    useEffect(() => {
+    const DarkModeFromSession = sessionStorage.getItem("DarkMode");
+    if (DarkModeFromSession !== null) {
+        setIsDarkMode(!!DarkModeFromSession)
+    }
+    }, [])
+    
     return (
     <DarkThemeContext.Provider value={{isDarkMode,toggleDarkMode}}>
         <ThemeProvider theme={isDarkMode?darkTheme:lightTheme}>
