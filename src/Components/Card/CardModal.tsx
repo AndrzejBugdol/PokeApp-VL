@@ -126,14 +126,16 @@ export const CardModal = ({ pokemon, onClose }: Props) => {
           onClick={onClose}>
           <i
             className="fa fa-times"
-            aria-hidden="true"></i>
+            aria-hidden="true"
+          />
         </CloseButton>
         <Container>
           <BaseSection>
             <PokeBox background={color}>
               <Image
                 src={pokemon.image}
-                alt={pokemon.name}></Image>
+                alt={pokemon.name}
+              />
             </PokeBox>
             <TextBox>
               <H1>{pokemon.name}</H1>

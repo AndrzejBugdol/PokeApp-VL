@@ -44,7 +44,8 @@ export const ProgressBar: React.FC<Props> = ({ type, score, maxScore, color }: P
       <Body>
         <Progress
           score={(score / maxScore) * 100}
-          color={color}></Progress>
+          color={color}
+        />
       </Body>
       <Score>
         {score}/{maxScore}

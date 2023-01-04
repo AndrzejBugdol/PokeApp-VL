@@ -42,7 +42,7 @@ export const PokeList = ({ listOfPokemons, errorFlag }: Props) => {
         callback={addTypes}
         clearAll={clearTypes}
       />
-      <TypedPokeList listOfPokemons={activePokemons}></TypedPokeList>
+      <TypedPokeList listOfPokemons={activePokemons} />
     </>
   );
 };

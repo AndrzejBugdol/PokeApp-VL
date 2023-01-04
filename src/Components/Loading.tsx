@@ -30,7 +30,8 @@ export const Loading: React.FC = () => {
     <LoadingDiv>
       <Logo
         src={pokeball}
-        alt="Pokeball"></Logo>
+        alt="Pokeball"
+      />
     </LoadingDiv>
   );
 };

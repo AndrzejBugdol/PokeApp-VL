@@ -54,12 +54,14 @@ export const NavigationBar: React.FC = () => {
             <Icon
               style={{ WebkitTextFillColor: 'rgba(0,0,0, 0.7)' }}
               onClick={DarkThemeContext.toggleDarkMode}
-              className="fa fa-certificate"></Icon>
+              className="fa fa-certificate"
+            />
           ) : (
             <Icon
               style={{ WebkitTextFillColor: 'rgba(0,0,0, 0.7)' }}
               onClick={DarkThemeContext.toggleDarkMode}
-              className="fa fa-moon-o"></Icon>
+              className="fa fa-moon-o"
+            />
           )}
         </li>
       </Ul>

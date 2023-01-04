@@ -95,25 +95,28 @@ export const Card: React.FC<Props> = ({ pokemon }: Props) => {
       <TopBlock background={CardBackgroundColor[type[0]]}>
         <div style={{ paddingLeft: '1em', width: '20%' }}>
           <H1>{name}</H1>
-          {type.map((type) => (
-            <H5 key={type}>{type}</H5>
+          {type.map((singleType) => (
+            <H5 key={singleType}>{singleType}</H5>
           ))}
         </div>
         <Image
           src={image}
-          alt={name}></Image>
+          alt={name}
+        />
       </TopBlock>
       <BottomBlock>
         <DefButton onClick={() => setmodalIsOpen(true)}>
           <i
             className="fa fa-info-circle card-icon"
-            style={{ background: CardBackgroundColor[type[0]] }}></i>{' '}
+            style={{ background: CardBackgroundColor[type[0]] }}
+          />{' '}
           Show details
         </DefButton>
         {modalIsOpen ? (
           <CardModal
             pokemon={pokemon}
-            onClose={() => setmodalIsOpen(false)}></CardModal>
+            onClose={() => setmodalIsOpen(false)}
+          />
         ) : null}
       </BottomBlock>
     </CardDiv>

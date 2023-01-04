@@ -83,22 +83,20 @@ export const TypeFilter: React.FC<Props> = ({ callback, clearAll }: Props) => {
   };
 
   return (
-    <>
-      <TypeContainer>
-        {ListOfTypes.map((type) => (
-          <TypeButton
-            background={activeFilters.includes(type) ? CardBackgroundColor[type] : '#f3efef'}
-            onClick={() => handleCallback(type)}
-            key={type}>
-            {type}
-          </TypeButton>
-        ))}
+    <TypeContainer>
+      {ListOfTypes.map((type) => (
         <TypeButton
-          background={CardBackgroundColor['unknown']}
-          onClick={() => handleclearAll()}>
-          Clear
+          background={activeFilters.includes(type) ? CardBackgroundColor[type] : '#f3efef'}
+          onClick={() => handleCallback(type)}
+          key={type}>
+          {type}
         </TypeButton>
-      </TypeContainer>
-    </>
+      ))}
+      <TypeButton
+        background={CardBackgroundColor.unknown}
+        onClick={() => handleclearAll()}>
+        Clear
+      </TypeButton>
+    </TypeContainer>
   );
 };

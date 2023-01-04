@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
 import { SearchBar } from './SearchBar';
 import { Card } from '../Card/Card';
 import { Pokemon } from '../../model';
-import styled from 'styled-components';
 
 const PokesList = styled.div`
   display: flex;
@@ -46,7 +46,8 @@ export const TypedPokeList = ({ listOfPokemons }: Props) => {
         {activePokemons.map((element) => (
           <Card
             key={element.id}
-            pokemon={element}></Card>
+            pokemon={element}
+          />
         ))}
       </PokesList>
     </>

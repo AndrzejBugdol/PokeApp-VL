@@ -1,28 +1,28 @@
 import { Pokemon, PokeApiResponse } from '../../model';
 
 export const fetchPokemonsData = async (firstPokemonID: number) => {
-  let listOfPokemons: Pokemon[] = [];
-  let lastPokemonID: number = firstPokemonID + 19;
+  const listOfPokemons: Pokemon[] = [];
+  const lastPokemonID: number = firstPokemonID + 19;
   let errorMessage: string = '';
 
   const listOfPromises: any[] = [];
 
-  PromisesLoop: for (let i = firstPokemonID; i <= lastPokemonID; i++) {
+  for (let i = firstPokemonID; i <= lastPokemonID; i++) {
     const URL: string = `https://pokeapi.co/api/v2/pokemon/${i}`;
 
     listOfPromises.push(
-      await fetch(URL)
+      fetch(URL)
         .then((response) => response.json())
         .catch((error) => {
           errorMessage = error;
         }),
     );
-    if (errorMessage !== '') break PromisesLoop;
+    if (errorMessage !== '') break;
   }
 
   await Promise.all(listOfPromises)
-    .then((data) => {
-      const mapPokemons: Pokemon[] = data.map((data: PokeApiResponse) => ({
+    .then((response) => {
+      const mapPokemons: Pokemon[] = response.map((data: PokeApiResponse) => ({
         name: data.name.charAt(0).toUpperCase() + data.name.slice(1),
         id: data.id,
         image: data.sprites.other.dream_world.front_default,
