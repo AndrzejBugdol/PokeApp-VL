@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
-import pokeball from '../Assets/Pokeball.png';
+import pokeball from '../../Assets/Pokeball.png';
 
 const spin = keyframes`
   to {
@@ -17,6 +17,7 @@ const LoadingDiv = styled.div`
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 1000;
 `;
 const Logo = styled.img`
   height: auto;
@@ -25,7 +26,7 @@ const Logo = styled.img`
   animation: ${spin} 0.8s ease-in-out infinite;
 `;
 
-export const Loading: React.FC = () => {
+export const Loading = () => {
   return (
     <LoadingDiv>
       <Logo

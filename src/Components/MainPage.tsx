@@ -1,26 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import { Pokemon } from '../model';
-import { fetchPokemonsData } from './PokemonList/FetchPokemons';
+import React, { useEffect, useState } from 'react';
+import { isNil } from 'lodash';
 import { PokeList } from './PokemonList/PokeList';
 import { Container, MainButton, ErrorBlock } from './MainPageStyles';
+import { useGetPokemonsQuery } from '../store/pokemons/pokemonsApi';
+import { Loading } from './Common/Loading';
+import { Pokemon } from '../model';
 
-export const MainPage: React.FC = () => {
+export const MainPage = () => {
   const [indexOfFirstPokemon, setIndexOfFirstPokemon] = useState<number>(1);
   const [currentPokemons, setcurrentPokemons] = useState<Pokemon[]>([]);
-  const [displayError, setdisplayError] = useState<boolean>(false);
+  const { data, error, isLoading, isFetching } = useGetPokemonsQuery(indexOfFirstPokemon);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetchPokemonsData(indexOfFirstPokemon);
-      if (response.length !== 0) {
-        setcurrentPokemons((prev) => [...prev, ...response]);
-        setdisplayError(false);
-      } else {
-        setdisplayError(true);
-      }
-    };
-    fetchData();
-  }, [indexOfFirstPokemon]);
+    if (!isNil(data)) {
+      setcurrentPokemons((prev) => [...prev, ...data]);
+    }
+  }, [data]);
 
   const addMorePokemonsButtonHandler = () => {
     setIndexOfFirstPokemon((prev) => prev + 20);
@@ -28,14 +23,11 @@ export const MainPage: React.FC = () => {
 
   return (
     <Container>
-      {displayError ? (
-        <ErrorBlock>Failed to load the data.</ErrorBlock>
-      ) : (
+      {error && <ErrorBlock>Failed to load the data.</ErrorBlock>}
+      {!isNil(data) && (
         <>
-          <PokeList
-            listOfPokemons={currentPokemons}
-            errorFlag={displayError}
-          />
+          {(isLoading || isFetching) && <Loading />}
+          <PokeList listOfPokemons={currentPokemons} />
           <MainButton onClick={addMorePokemonsButtonHandler}>Load more</MainButton>
         </>
       )}

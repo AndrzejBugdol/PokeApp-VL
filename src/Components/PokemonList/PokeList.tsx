@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Pokemon } from '../../model';
-import { Loading } from '../Loading';
 import { TypeFilter } from './TypeFilter';
 import { PokemonType } from '../../Utils/ColorsUtils';
 import { TypedPokeList } from './TypedPokeList';
 
 type Props = {
   listOfPokemons: Pokemon[];
-  errorFlag: boolean;
 };
 
-export const PokeList = ({ listOfPokemons, errorFlag }: Props) => {
+export const PokeList = ({ listOfPokemons }: Props) => {
   const [typeValue, setTypeValue] = useState<string[]>([]);
   const [activePokemons, setActivePokemons] = useState<Pokemon[]>([]);
 
@@ -33,8 +31,6 @@ export const PokeList = ({ listOfPokemons, errorFlag }: Props) => {
       setActivePokemons(listOfPokemons);
     }
   }, [typeValue, listOfPokemons]);
-
-  if (!listOfPokemons[0] && !errorFlag) return <Loading />;
 
   return (
     <>
