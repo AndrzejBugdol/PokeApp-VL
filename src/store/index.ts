@@ -1,18 +1,12 @@
-import { createRouterMiddleware } from '@lagunovsky/redux-react-router';
-import { configureStore, PreloadedState } from '@reduxjs/toolkit';
-import { History } from 'history';
+import { configureStore } from '@reduxjs/toolkit';
 
 import { pokeApi } from './pokemons/pokemonsApi';
-import { createRootReducer, RootState } from './rootReducer';
+import { createRootReducer } from './rootReducer';
 
-export const getStore = (history: History, preloadedState: PreloadedState<RootState> = {}) => {
+export const getStore = () => {
   const store = configureStore({
-    preloadedState,
-    reducer: createRootReducer(history),
-    middleware: (getDefaultMiddleware) => [
-      ...getDefaultMiddleware().concat(pokeApi.middleware),
-      createRouterMiddleware(history),
-    ],
+    reducer: createRootReducer(),
+    middleware: (getDefaultMiddleware) => [...getDefaultMiddleware().concat(pokeApi.middleware)],
   });
   return store;
 };

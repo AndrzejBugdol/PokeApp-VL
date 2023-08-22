@@ -8,28 +8,7 @@ type TypeFilterProps = {
   clearAll: () => void;
 };
 
-const ListOfTypes: PokemonType[] = [
-  'normal',
-  'fighting',
-  'flying',
-  'ground',
-  'rock',
-  'bug',
-  'ghost',
-  'steel',
-  'fire',
-  'water',
-  'grass',
-  'electric',
-  'psychic',
-  'ice',
-  'dragon',
-  'dark',
-  'fairy',
-  'unknown',
-  'shadow',
-  'poison',
-];
+const ListOfTypes = Object.keys(CardBackgroundColor) as PokemonType[];
 
 const TypeFilter = ({ callback, clearAll }: TypeFilterProps) => {
   const [activeFilters, setactiveFilters] = useState<PokemonType[]>([]);

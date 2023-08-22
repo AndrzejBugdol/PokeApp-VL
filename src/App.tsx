@@ -1,5 +1,4 @@
 import './App.css';
-import { createBrowserHistory } from 'history';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
@@ -11,8 +10,7 @@ import AboutPage from './pages/AboutPage';
 import MainPage from './pages/MainPage';
 import { getStore } from './store';
 
-const history = createBrowserHistory();
-const store = getStore(history);
+const store = getStore();
 
 export const App = () => {
   return (
