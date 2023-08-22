@@ -1,21 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
+import { useState, useEffect } from 'react';
 
 import { Pokemon } from '../../types';
-import Card from '../Card/Card';
-import SearchBar from './SearchBar';
-
-const PokesList = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1%;
-  justify-content: space-around;
-`;
-const P = styled.p`
-  padding-top: 10%;
-  text-align: center;
-  line-height: 1rem;
-`;
+import Card from '../Card';
+import SearchBar from '../SearchBar';
+import { PokesList, P } from './styles';
 
 type TypedPokeListProps = {
   listOfPokemons: Pokemon[];

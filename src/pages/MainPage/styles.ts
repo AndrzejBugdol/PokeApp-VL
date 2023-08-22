@@ -10,6 +10,7 @@ export const Container = styled.div`
   background-color: ${(props) => props.theme.background};
   transition: background-color 0.5s linear;
 `;
+
 export const MainButton = styled.button`
   appearance: none;
   color: ${(props) => props.theme.color};

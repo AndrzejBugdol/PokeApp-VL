@@ -1,11 +1,11 @@
 import { isNil } from 'lodash';
 import React, { useEffect, useState } from 'react';
 
-import { useGetPokemonsQuery } from '../store/pokemons/pokemonsApi';
-import { Pokemon } from '../types';
-import Loading from './common/Loading';
-import { Container, MainButton, ErrorBlock } from './MainPageStyles';
-import PokeList from './PokemonList/PokeList';
+import Loading from '../../components/common/Loader';
+import PokeList from '../../components/PokemonList';
+import { useGetPokemonsQuery } from '../../store/pokemons/pokemonsApi';
+import { Pokemon } from '../../types';
+import { Container, MainButton, ErrorBlock } from './styles';
 
 const MainPage = () => {
   const [indexOfFirstPokemon, setIndexOfFirstPokemon] = useState<number>(1);

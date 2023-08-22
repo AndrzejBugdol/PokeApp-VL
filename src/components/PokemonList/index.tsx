@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 import { Pokemon } from '../../types';
 import { PokemonType } from '../../utils/colorsUtils';
-import TypedPokeList from './TypedPokeList';
-import TypeFilter from './TypeFilter';
+import TypedPokeList from '../TypedPokeList';
+import TypeFilter from '../TypeFilter';
 
 type PokeListProps = {
   listOfPokemons: Pokemon[];
