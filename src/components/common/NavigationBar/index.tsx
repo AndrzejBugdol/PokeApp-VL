@@ -11,10 +11,10 @@ const NavigationBar = () => {
       <Header>PokeApp</Header>
       <Ul>
         <li>
-          <Link to="/PokeApp-VL/">Home</Link>
+          <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/PokeApp-VL/about">About</Link>
+          <Link to="/about">About</Link>
         </li>
         <li>
           {DarkThemeContext.isDarkMode ? (
