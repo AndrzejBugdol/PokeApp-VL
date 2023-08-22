@@ -22,11 +22,11 @@ export const App = () => {
           <SuspenseWrapper>
             <Routes>
               <Route
-                path="/"
+                path="/PokeApp-VL/"
                 element={<MainPage />}
               />
               <Route
-                path="/about"
+                path="/PokeApp-VL/about"
                 element={<AboutPage />}
               />
               <Route
