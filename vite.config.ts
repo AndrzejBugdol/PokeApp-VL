@@ -8,5 +8,11 @@ export default defineConfig({
   plugins: [react(), viteTsconfigPaths(), svgrPlugin()],
   build: {
     outDir: './build',
+    rollupOptions: {
+      output: {
+        entryFileNames: `[name].js`,
+        assetFileNames: `[name].[ext]`,
+      },
+    },
   },
 });
