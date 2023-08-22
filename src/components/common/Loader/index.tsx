@@ -1,4 +1,4 @@
-import pokeball from '../../assets/Pokeball.png';
+import pokeball from '../../../assets/Pokeball.png';
 import { LoadingDiv, Logo } from './styles';
 
 const Loader = () => {
