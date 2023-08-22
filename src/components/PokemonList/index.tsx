@@ -1,45 +1,60 @@
-import { useState, useEffect } from 'react';
+import { useMemo } from 'react';
 
+import { useFiltersContext } from '../../services/FiltersContext';
 import { Pokemon } from '../../types';
-import { PokemonType } from '../../utils/colorsUtils';
-import TypedPokeList from '../TypedPokeList';
+import Card from '../Card';
+import SearchBar from '../SearchFilter';
 import TypeFilter from '../TypeFilter';
+import { P, PokesList } from './styles';
 
 type PokeListProps = {
   listOfPokemons: Pokemon[];
 };
 
+const filteredPokemons = (searchValue: string, types: string[], pokemons: Pokemon[]): Pokemon[] => {
+  let result: Pokemon[] = [];
+
+  if (types.length > 0 && searchValue.length > 1) {
+    result = pokemons.filter(
+      (e) => e.type.some((type) => types.includes(type)) && e.name.toLowerCase().includes(searchValue.toLowerCase()),
+    );
+  } else if (types.length > 0 && searchValue.length < 1) {
+    result = pokemons.filter((e) => e.type.some((type) => types.includes(type)));
+  } else if (types.length === 0 && searchValue.length > 1) {
+    result = pokemons.filter((e) => e.name.toLowerCase().includes(searchValue.toLowerCase()));
+  } else {
+    result = pokemons;
+  }
+
+  return result;
+};
+
 const PokeList = ({ listOfPokemons }: PokeListProps) => {
-  const [typeValue, setTypeValue] = useState<string[]>([]);
-  const [activePokemons, setActivePokemons] = useState<Pokemon[]>([]);
+  const { typesValue, searchValue } = useFiltersContext();
 
-  const addTypes = (type: PokemonType) => {
-    if (typeValue.includes(type)) {
-      setTypeValue((prev) => prev.filter((e) => e !== type));
-    } else {
-      setTypeValue((prev) => [...prev, type]);
-    }
-  };
-
-  const clearTypes = () => {
-    setTypeValue([]);
-  };
-
-  useEffect(() => {
-    if (typeValue.length > 0) {
-      setActivePokemons(listOfPokemons.filter((e) => e.type.some((type) => typeValue.includes(type))));
-    } else {
-      setActivePokemons(listOfPokemons);
-    }
-  }, [typeValue, listOfPokemons]);
+  const activePokemons = useMemo(() => {
+    return filteredPokemons(searchValue, typesValue, listOfPokemons);
+  }, [listOfPokemons, searchValue, typesValue]);
 
   return (
     <>
-      <TypeFilter
-        callback={addTypes}
-        clearAll={clearTypes}
-      />
-      <TypedPokeList listOfPokemons={activePokemons} />
+      <TypeFilter />
+      <SearchBar />
+      <PokesList>
+        {activePokemons.length === 0 ? (
+          <P>
+            No pokemons found for selected values
+            <br />
+            Try loading some more
+          </P>
+        ) : null}
+        {activePokemons.map((element) => (
+          <Card
+            key={element.id}
+            pokemon={element}
+          />
+        ))}
+      </PokesList>
     </>
   );
 };

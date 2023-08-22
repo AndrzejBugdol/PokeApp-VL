@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import { useDarkThemeContext } from '../DarkMode';
+import { useDarkThemeContext } from '../../../services/DarkModeContext';
 import { Header, Icon, Nav, Ul } from './styles';
 
 const NavigationBar = () => {
@@ -11,10 +11,10 @@ const NavigationBar = () => {
       <Header>PokeApp</Header>
       <Ul>
         <li>
-          <Link to="/PokeApp-VL">Home</Link>
+          <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/PokeApp-VL/about">About</Link>
+          <Link to="/about">About</Link>
         </li>
         <li>
           {DarkThemeContext.isDarkMode ? (

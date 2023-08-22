@@ -1,12 +1,11 @@
 import { useRef } from 'react';
 
+import { useFiltersContext } from '../../services/FiltersContext';
 import { TopBox, Search } from './styles';
 
-type SearchBarProps = {
-  setSearchValue: (value: string) => void;
-};
+const SearchFilter = () => {
+  const { setSearchValue } = useFiltersContext();
 
-const SearchBar = ({ setSearchValue }: SearchBarProps) => {
   const searchVal = useRef<HTMLInputElement | null>(null);
 
   return (
@@ -20,4 +19,4 @@ const SearchBar = ({ setSearchValue }: SearchBarProps) => {
   );
 };
 
-export default SearchBar;
+export default SearchFilter;

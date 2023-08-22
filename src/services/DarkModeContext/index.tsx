@@ -1,7 +1,7 @@
 import { useState, createContext, useContext, useEffect } from 'react';
 import { ThemeProvider } from 'styled-components';
 
-import { darkTheme, lightTheme } from '../../../utils/themes';
+import { darkTheme, lightTheme } from '../../utils/themes';
 
 type DarkModeType = {
   isDarkMode: boolean;

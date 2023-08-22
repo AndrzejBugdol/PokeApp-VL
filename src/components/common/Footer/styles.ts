@@ -5,7 +5,7 @@ export const FooterDiv = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 10vh;
+  height: 78px;
   background: white;
   border-top: 2px solid black;
 `;

@@ -5,7 +5,7 @@ export const Nav = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 10vh;
+  height: 78px;
   background: white;
   border-bottom: 2px solid black;
   transition: all 0.5s linear;

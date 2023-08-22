@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 
 import Loading from '../../components/common/Loader';
 import PokeList from '../../components/PokemonList';
+import { FiltersProvider } from '../../services/FiltersContext';
 import { useGetPokemonsQuery } from '../../store/pokemons/pokemonsApi';
 import { Pokemon } from '../../types';
 import { Container, LoadMoreButton, ErrorBlock } from './styles';
@@ -28,7 +29,9 @@ const MainPage = () => {
       {!isNil(data) && (
         <>
           {(isLoading || isFetching) && <Loading />}
-          <PokeList listOfPokemons={currentPokemons} />
+          <FiltersProvider>
+            <PokeList listOfPokemons={currentPokemons} />
+          </FiltersProvider>
           <LoadMoreButton onClick={addMorePokemonsButtonHandler}>Load more</LoadMoreButton>
         </>
       )}

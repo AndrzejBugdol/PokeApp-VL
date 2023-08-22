@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Stamp = styled.div<{ background: string }>`
+export const Badge = styled.div<{ background: string }>`
   font-family: 'Overpass';
   font-size: 1rem;
   font-weight: 500;

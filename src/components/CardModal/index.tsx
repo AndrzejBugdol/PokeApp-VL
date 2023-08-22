@@ -2,8 +2,8 @@ import React from 'react';
 
 import { Pokemon } from '../../types';
 import { CardBackgroundColor } from '../../utils/colorsUtils';
+import TypeBadge from '../common/TypeBadge';
 import ProgressBar from '../ProgressBar';
-import TypeComponent from '../TypeComponent';
 import {
   BaseSection,
   CloseButton,
@@ -49,7 +49,7 @@ const CardModal = ({ pokemon, onClose }: CardModalProps) => {
               <H1>{pokemon.name}</H1>
               <H5>Type: </H5>
               {pokemon.type.map((el) => (
-                <TypeComponent
+                <TypeBadge
                   key={el}
                   type={el}
                 />
