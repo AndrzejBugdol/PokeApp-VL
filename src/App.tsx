@@ -7,6 +7,7 @@ import NavigationBar from './components/common/NavigationBar';
 import SuspenseWrapper from './components/common/SuspenseWrapper';
 import AboutPage from './pages/AboutPage';
 import MainPage from './pages/MainPage';
+import NotFound from './pages/NotFound';
 import { ToggleDarkModeProvider } from './services/DarkModeContext';
 import { getStore } from './store';
 
@@ -27,6 +28,10 @@ export const App = () => {
               <Route
                 path="/about"
                 element={<AboutPage />}
+              />
+              <Route
+                path="/*"
+                element={<NotFound />}
               />
             </Routes>
           </SuspenseWrapper>
