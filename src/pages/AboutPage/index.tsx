@@ -1,13 +1,12 @@
-import { Container } from '../MainPage/styles';
-import { H1, H5 } from './styles';
+import { H1, H5, Container } from './styles';
 
 const AboutPage = () => {
   return (
     <Container>
-      <H1>Hi there!</H1>
+      <H1>Hi there! 👋</H1>
       <H5>
-        Welcome to my PokeApp. Simple React application to explore the world of Pokemons! <br />
-        This app has been created for the recruitment purpose.
+        Welcome to my PokeApp. This is a simple React application to explore the world of Pokemons! <br />
+        This app has been created for one of the recruitment purpose.
         <br />
         <br />
         Used Technologies:
@@ -16,7 +15,9 @@ const AboutPage = () => {
         <br />
         -Styled Components
         <br />
-        -React Router <br />
+        -React Router
+        <br />
+        -Redux Toolkit <br />
       </H5>
     </Container>
   );
