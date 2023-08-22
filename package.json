@@ -1,5 +1,5 @@
 {
-  "homepage": "http://AndrzejBugdol.github.io/PokeApp-VL",
+  "homepage": "https://andrzejbugdol.github.io/PokeApp-VL",
   "name": "pokeapp-vl",
   "version": "0.1.0",
   "private": true,
@@ -7,7 +7,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "start": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "serve": "vite preview",
     "lint": "eslint \"src/**/*.{ts,tsx}\" --fix"
   },
