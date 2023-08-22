@@ -23,6 +23,7 @@ export const ModalBlock = styled.div`
   transform: translate(-50%, -50%);
   background-color: white;
   height: 80%;
+  min-width: 500px;
   width: 60%;
   z-index: 1000;
   display: flex;
