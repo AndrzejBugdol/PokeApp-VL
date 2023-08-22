@@ -137,7 +137,7 @@ Error generating stack: `+l.message+`
   &:hover {
     cursor: pointer;
   }
-`,hI=()=>{const e=sI();return Q.jsxs(fI,{children:[Q.jsx(dI,{children:"PokeApp"}),Q.jsxs(pI,{children:[Q.jsx("li",{children:Q.jsx($m,{to:"/",children:"Home"})}),Q.jsx("li",{children:Q.jsx($m,{to:"/about",children:"About"})}),Q.jsx("li",{children:e.isDarkMode?Q.jsx(Bm,{style:{WebkitTextFillColor:"rgba(0,0,0, 0.7)"},onClick:e.toggleDarkMode,className:"fa fa-certificate"}):Q.jsx(Bm,{style:{WebkitTextFillColor:"rgba(0,0,0, 0.7)"},onClick:e.toggleDarkMode,className:"fa fa-moon-o"})})]})]})},vI="/assets/Pokeball-51b477c1.png",gI=eI`
+`,hI=()=>{const e=sI();return Q.jsxs(fI,{children:[Q.jsx(dI,{children:"PokeApp"}),Q.jsxs(pI,{children:[Q.jsx("li",{children:Q.jsx($m,{to:"/",children:"Home"})}),Q.jsx("li",{children:Q.jsx($m,{to:"/about",children:"About"})}),Q.jsx("li",{children:e.isDarkMode?Q.jsx(Bm,{style:{WebkitTextFillColor:"rgba(0,0,0, 0.7)"},onClick:e.toggleDarkMode,className:"fa fa-certificate"}):Q.jsx(Bm,{style:{WebkitTextFillColor:"rgba(0,0,0, 0.7)"},onClick:e.toggleDarkMode,className:"fa fa-moon-o"})})]})]})},vI="/Pokeball.png",gI=eI`
   to {
     transform: rotate(360deg);
   }
