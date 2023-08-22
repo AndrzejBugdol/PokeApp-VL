@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { CardBackgroundColor, PokemonType } from '../../Utils/ColorsUtils';
-import { Pokemon } from '../../model';
+
+import { Pokemon } from '../../types';
+import { CardBackgroundColor } from '../../utils/colorsUtils';
 import { CardModal } from './CardModal';
 
 const CardDiv = styled.div`
@@ -76,19 +77,13 @@ const DefButton = styled.button`
   min-width: 50%;
 `;
 
-type SinglePokemon = {
-  name: string;
-  type: PokemonType[];
-  image: string;
-  id: number;
-};
-type Props = {
+type CardProps = {
   pokemon: Pokemon;
 };
 
-export const Card: React.FC<Props> = ({ pokemon }: Props) => {
-  const [modalIsOpen, setmodalIsOpen] = useState<boolean>(false);
-  const { name, type, image }: SinglePokemon = pokemon;
+const Card = ({ pokemon }: CardProps) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const { name, type, image } = pokemon;
 
   return (
     <CardDiv>
@@ -105,20 +100,22 @@ export const Card: React.FC<Props> = ({ pokemon }: Props) => {
         />
       </TopBlock>
       <BottomBlock>
-        <DefButton onClick={() => setmodalIsOpen(true)}>
+        <DefButton onClick={() => setIsModalOpen(true)}>
           <i
             className="fa fa-info-circle card-icon"
             style={{ background: CardBackgroundColor[type[0]] }}
           />{' '}
           Show details
         </DefButton>
-        {modalIsOpen ? (
+        {isModalOpen ? (
           <CardModal
             pokemon={pokemon}
-            onClose={() => setmodalIsOpen(false)}
+            onClose={() => setIsModalOpen(false)}
           />
         ) : null}
       </BottomBlock>
     </CardDiv>
   );
 };
+
+export default Card;

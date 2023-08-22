@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Pokemon } from '../../model';
-import { CardBackgroundColor } from '../../Utils/ColorsUtils';
+
+import { Pokemon } from '../../types';
+import { CardBackgroundColor } from '../../utils/colorsUtils';
 import { ProgressBar } from './ProgressBar';
 import { TypeComponent } from './TypeComponent';
 
@@ -110,12 +111,12 @@ const H5 = styled.h5`
   padding: 0.25rem 0.25rem;
 `;
 
-type Props = {
+type CardModalProps = {
   pokemon: Pokemon;
   onClose: (event: React.MouseEvent<HTMLButtonElement>) => void;
 };
 
-export const CardModal = ({ pokemon, onClose }: Props) => {
+const CardModal = ({ pokemon, onClose }: CardModalProps) => {
   const color: string = CardBackgroundColor[pokemon.type[0]];
 
   return (
@@ -141,7 +142,10 @@ export const CardModal = ({ pokemon, onClose }: Props) => {
               <H1>{pokemon.name}</H1>
               <H5>Type: </H5>
               {pokemon.type.map((el) => (
-                <TypeComponent type={el} />
+                <TypeComponent
+                  key={el}
+                  type={el}
+                />
               ))}
               <H5>Height: {(pokemon.height * 0.1).toFixed(1)}m </H5>
               <H5>Weight: {(pokemon.weight * 0.1).toFixed(1)}kg</H5>
@@ -191,3 +195,5 @@ export const CardModal = ({ pokemon, onClose }: Props) => {
     </ShadowBlock>
   );
 };
+
+export default CardModal;

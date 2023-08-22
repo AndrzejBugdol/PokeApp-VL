@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { SearchBar } from './SearchBar';
-import { Card } from '../Card/Card';
-import { Pokemon } from '../../model';
+
+import { Pokemon } from '../../types';
+import Card from '../Card/Card';
+import SearchBar from './SearchBar';
 
 const PokesList = styled.div`
   display: flex;
@@ -16,11 +17,11 @@ const P = styled.p`
   line-height: 1rem;
 `;
 
-type Props = {
+type TypedPokeListProps = {
   listOfPokemons: Pokemon[];
 };
 
-export const TypedPokeList = ({ listOfPokemons }: Props) => {
+const TypedPokeList = ({ listOfPokemons }: TypedPokeListProps) => {
   const [searchValue, setSearchVal] = useState<string>('');
   const [activePokemons, setActivePokemons] = useState<Pokemon[]>([]);
 
@@ -53,3 +54,5 @@ export const TypedPokeList = ({ listOfPokemons }: Props) => {
     </>
   );
 };
+
+export default TypedPokeList;

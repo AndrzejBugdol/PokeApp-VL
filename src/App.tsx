@@ -1,12 +1,13 @@
 import './App.css';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { Provider } from 'react-redux';
 import { createBrowserHistory } from 'history';
-import { Footer } from './Components/Common/Footer';
-import { MainPage } from './Components/MainPage';
-import { NavigationBar } from './Components/Common/NavigationBar';
-import { AboutPage } from './Components/AboutPage';
-import { ToggleDarkModeProvider } from './Components/ToggleDarkModeProvider';
+import { Provider } from 'react-redux';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
+import AboutPage from './components/AboutPage';
+import Footer from './components/common/Footer';
+import NavigationBar from './components/common/NavigationBar';
+import MainPage from './components/MainPage';
+import { ToggleDarkModeProvider } from './components/ToggleDarkModeProvider';
 import { getStore } from './store';
 
 const history = createBrowserHistory();

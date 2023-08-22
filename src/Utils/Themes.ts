@@ -1,4 +1,4 @@
-import { ThemeType } from '../model';
+import { ThemeType } from '../types';
 
 export const darkTheme: ThemeType = {
   color: 'white',

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const gitLink: string = 'https://github.com/AndrzejBugdol/PokeApp-VL';
+const gitLink = 'https://github.com/AndrzejBugdol/PokeApp-VL';
 
 const FooterDiv = styled.div`
   display: flex;
@@ -30,7 +30,7 @@ const Icon = styled.i`
   color: black;
 `;
 
-export const Footer: React.FC = () => {
+const Footer = () => {
   return (
     <FooterDiv>
       <div style={{ paddingLeft: '2rem' }}>
@@ -45,3 +45,5 @@ export const Footer: React.FC = () => {
     </FooterDiv>
   );
 };
+
+export default Footer;

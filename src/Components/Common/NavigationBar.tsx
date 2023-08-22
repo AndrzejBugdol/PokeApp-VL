@@ -1,6 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+
 import { useDarkThemeContext } from '../ToggleDarkModeProvider';
 
 const Nav = styled.div`
@@ -36,7 +37,7 @@ const Icon = styled.i`
   }
 `;
 
-export const NavigationBar: React.FC = () => {
+const NavigationBar = () => {
   const DarkThemeContext = useDarkThemeContext();
 
   return (
@@ -68,3 +69,5 @@ export const NavigationBar: React.FC = () => {
     </Nav>
   );
 };
+
+export default NavigationBar;

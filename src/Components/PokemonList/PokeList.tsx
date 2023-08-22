@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { Pokemon } from '../../model';
-import { TypeFilter } from './TypeFilter';
-import { PokemonType } from '../../Utils/ColorsUtils';
-import { TypedPokeList } from './TypedPokeList';
 
-type Props = {
+import { Pokemon } from '../../types';
+import { PokemonType } from '../../utils/colorsUtils';
+import TypedPokeList from './TypedPokeList';
+import TypeFilter from './TypeFilter';
+
+type PokeListProps = {
   listOfPokemons: Pokemon[];
 };
 
-export const PokeList = ({ listOfPokemons }: Props) => {
+const PokeList = ({ listOfPokemons }: PokeListProps) => {
   const [typeValue, setTypeValue] = useState<string[]>([]);
   const [activePokemons, setActivePokemons] = useState<Pokemon[]>([]);
 
@@ -42,3 +43,5 @@ export const PokeList = ({ listOfPokemons }: Props) => {
     </>
   );
 };
+
+export default PokeList;

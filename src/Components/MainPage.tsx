@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from 'react';
 import { isNil } from 'lodash';
-import { PokeList } from './PokemonList/PokeList';
-import { Container, MainButton, ErrorBlock } from './MainPageStyles';
-import { useGetPokemonsQuery } from '../store/pokemons/pokemonsApi';
-import { Loading } from './Common/Loading';
-import { Pokemon } from '../model';
+import React, { useEffect, useState } from 'react';
 
-export const MainPage = () => {
+import { useGetPokemonsQuery } from '../store/pokemons/pokemonsApi';
+import { Pokemon } from '../types';
+import Loading from './common/Loading';
+import { Container, MainButton, ErrorBlock } from './MainPageStyles';
+import PokeList from './PokemonList/PokeList';
+
+const MainPage = () => {
   const [indexOfFirstPokemon, setIndexOfFirstPokemon] = useState<number>(1);
   const [currentPokemons, setcurrentPokemons] = useState<Pokemon[]>([]);
   const { data, error, isLoading, isFetching } = useGetPokemonsQuery(indexOfFirstPokemon);
@@ -34,3 +35,5 @@ export const MainPage = () => {
     </Container>
   );
 };
+
+export default MainPage;

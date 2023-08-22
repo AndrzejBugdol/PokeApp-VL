@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { CardBackgroundColor, PokemonType } from '../../Utils/ColorsUtils';
+
+import { CardBackgroundColor, PokemonType } from '../../utils/colorsUtils';
 
 const Stamp = styled.div<{ background: string }>`
   font-family: 'Overpass';
@@ -14,11 +15,13 @@ const Stamp = styled.div<{ background: string }>`
   text-align: center;
   max-width: 100px;
 `;
-type Props = {
+type TypeComponentProps = {
   type: PokemonType;
 };
 
-export const TypeComponent = ({ type }: Props) => {
+const TypeComponent = ({ type }: TypeComponentProps) => {
   const color: string = CardBackgroundColor[type];
   return <Stamp background={color}>{type}</Stamp>;
 };
+
+export default TypeComponent;

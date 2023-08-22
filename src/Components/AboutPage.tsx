@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+
 import { Container } from './MainPageStyles';
 
 const H1 = styled.h1`
@@ -22,7 +23,7 @@ const H5 = styled.h5`
   text-align: center;
 `;
 
-export const AboutPage = () => {
+const AboutPage = () => {
   return (
     <Container>
       <H1>Hi there!</H1>
@@ -42,3 +43,5 @@ export const AboutPage = () => {
     </Container>
   );
 };
+
+export default AboutPage;

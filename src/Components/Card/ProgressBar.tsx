@@ -9,6 +9,7 @@ const Label = styled.h1`
   min-width: 7.5rem;
   padding: 0.25rem 0.25rem;
 `;
+
 const Score = styled.h1`
   font-family: 'Overpass';
   font-size: 1rem;
@@ -16,6 +17,7 @@ const Score = styled.h1`
   color: black;
   padding: 0.25rem 0;
 `;
+
 const Body = styled.div`
   height: 20px;
   width: 100%;
@@ -23,6 +25,7 @@ const Body = styled.div`
   border-radius: 50px;
   margin: 0 0.5rem;
 `;
+
 const Progress = styled.div<{ score: number }>`
   height: 100%;
   width: ${(props) => props.score}%;
@@ -30,14 +33,14 @@ const Progress = styled.div<{ score: number }>`
   border-radius: inherit;
 `;
 
-type Props = {
+type ProgressBarProps = {
   type: string;
   score: number;
   maxScore: number;
   color: string;
 };
 
-export const ProgressBar: React.FC<Props> = ({ type, score, maxScore, color }: Props) => {
+const ProgressBar = ({ type, score, maxScore, color }: ProgressBarProps) => {
   return (
     <div style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center' }}>
       <Label>{type}</Label>
@@ -53,3 +56,5 @@ export const ProgressBar: React.FC<Props> = ({ type, score, maxScore, color }: P
     </div>
   );
 };
+
+export default ProgressBar;

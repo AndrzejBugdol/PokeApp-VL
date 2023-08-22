@@ -1,6 +1,7 @@
 import { createRouterMiddleware } from '@lagunovsky/redux-react-router';
 import { configureStore, PreloadedState } from '@reduxjs/toolkit';
 import { History } from 'history';
+
 import { pokeApi } from './pokemons/pokemonsApi';
 import { createRootReducer, RootState } from './rootReducer';
 

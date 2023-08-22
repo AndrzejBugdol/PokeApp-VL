@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { CardBackgroundColor, PokemonType } from '../../Utils/ColorsUtils';
+
+import { CardBackgroundColor, PokemonType } from '../../utils/colorsUtils';
 
 const TypeButton = styled.button<{ background: string }>`
   appearance: none;
@@ -37,7 +38,7 @@ const TypeContainer = styled.div`
   background: rgb(60, 60, 60, 0.3);
 `;
 
-type Props = {
+type TypeFilterProps = {
   callback: (type: PokemonType) => void;
   clearAll: () => void;
 };
@@ -65,7 +66,7 @@ const ListOfTypes: PokemonType[] = [
   'poison',
 ];
 
-export const TypeFilter: React.FC<Props> = ({ callback, clearAll }: Props) => {
+const TypeFilter = ({ callback, clearAll }: TypeFilterProps) => {
   const [activeFilters, setactiveFilters] = useState<PokemonType[]>([]);
 
   const handleCallback = (type: PokemonType) => {
@@ -100,3 +101,5 @@ export const TypeFilter: React.FC<Props> = ({ callback, clearAll }: Props) => {
     </TypeContainer>
   );
 };
+
+export default TypeFilter;

@@ -1,4 +1,5 @@
-import { PokemonType } from './Utils/ColorsUtils';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { PokemonType } from './utils/colorsUtils';
 
 export type Pokemon = {
   name: string;
