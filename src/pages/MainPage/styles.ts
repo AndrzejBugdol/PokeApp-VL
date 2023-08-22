@@ -11,7 +11,7 @@ export const Container = styled.div`
   transition: background-color 0.5s linear;
 `;
 
-export const MainButton = styled.button`
+export const LoadMoreButton = styled.button`
   appearance: none;
   color: ${(props) => props.theme.color};
   background-color: ${(props) => props.theme.background};

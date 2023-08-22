@@ -5,7 +5,7 @@ import Loading from '../../components/common/Loader';
 import PokeList from '../../components/PokemonList';
 import { useGetPokemonsQuery } from '../../store/pokemons/pokemonsApi';
 import { Pokemon } from '../../types';
-import { Container, MainButton, ErrorBlock } from './styles';
+import { Container, LoadMoreButton, ErrorBlock } from './styles';
 
 const MainPage = () => {
   const [indexOfFirstPokemon, setIndexOfFirstPokemon] = useState<number>(1);
@@ -29,7 +29,7 @@ const MainPage = () => {
         <>
           {(isLoading || isFetching) && <Loading />}
           <PokeList listOfPokemons={currentPokemons} />
-          <MainButton onClick={addMorePokemonsButtonHandler}>Load more</MainButton>
+          <LoadMoreButton onClick={addMorePokemonsButtonHandler}>Load more</LoadMoreButton>
         </>
       )}
     </Container>
