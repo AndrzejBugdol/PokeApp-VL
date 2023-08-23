@@ -137,7 +137,7 @@ Error generating stack: `+l.message+`
   &:hover {
     cursor: pointer;
   }
-`,hI=()=>{const e=sI();return Q.jsxs(fI,{children:[Q.jsx(dI,{children:"PokeApp"}),Q.jsxs(pI,{children:[Q.jsx("li",{children:Q.jsx($m,{to:"/",children:"Home"})}),Q.jsx("li",{children:Q.jsx($m,{to:"/about",children:"About"})}),Q.jsx("li",{children:e.isDarkMode?Q.jsx(Bm,{style:{WebkitTextFillColor:"rgba(0,0,0, 0.7)"},onClick:e.toggleDarkMode,className:"fa fa-certificate"}):Q.jsx(Bm,{style:{WebkitTextFillColor:"rgba(0,0,0, 0.7)"},onClick:e.toggleDarkMode,className:"fa fa-moon-o"})})]})]})},vI="/PokeApp-VL/assets/Pokeball-51b477c1.png",gI=eI`
+`,hI=()=>{const e=sI();return Q.jsxs(fI,{children:[Q.jsx(dI,{children:"PokeApp"}),Q.jsxs(pI,{children:[Q.jsx("li",{children:Q.jsx($m,{to:"/PokeApp-VL/",children:"Home"})}),Q.jsx("li",{children:Q.jsx($m,{to:"/PokeApp-VL/about",children:"About"})}),Q.jsx("li",{children:e.isDarkMode?Q.jsx(Bm,{style:{WebkitTextFillColor:"rgba(0,0,0, 0.7)"},onClick:e.toggleDarkMode,className:"fa fa-certificate"}):Q.jsx(Bm,{style:{WebkitTextFillColor:"rgba(0,0,0, 0.7)"},onClick:e.toggleDarkMode,className:"fa fa-moon-o"})})]})]})},vI="/PokeApp-VL/assets/Pokeball-51b477c1.png",gI=eI`
   to {
     transform: rotate(360deg);
   }
@@ -520,4 +520,4 @@ function print() { __p += __j.call(arguments, '') }
   margin: 5% 0;
   min-width: 20rem;
   text-align: center;
-`,X5=()=>Q.jsx(G5,{children:Q.jsx(Y5,{children:"Oops! Nothing here 😞"})}),Z5=()=>Dh({[ys.reducerPath]:ys.reducer}),J5=()=>F4({reducer:Z5(),middleware:t=>[...t().concat(ys.middleware)]}),eM=J5(),tM=()=>Q.jsx($T,{store:eM,children:Q.jsx(cI,{children:Q.jsxs(h3,{children:[Q.jsx(hI,{}),Q.jsx(wI,{children:Q.jsxs(f3,{children:[Q.jsx(Ca,{path:"/",element:Q.jsx(K5,{})}),Q.jsx(Ca,{path:"/about",element:Q.jsx(kI,{})}),Q.jsx(Ca,{path:"/*",element:Q.jsx(X5,{})})]})}),Q.jsx(oI,{})]})})}),FS=document.getElementById("root");if(!FS)throw new Error("Failed to find the root element");const nM=zw(FS);nM.render(Q.jsx(tM,{}));
+`,X5=()=>Q.jsx(G5,{children:Q.jsx(Y5,{children:"Oops! Nothing here 😞"})}),Z5=()=>Dh({[ys.reducerPath]:ys.reducer}),J5=()=>F4({reducer:Z5(),middleware:t=>[...t().concat(ys.middleware)]}),eM=J5(),tM=()=>Q.jsx($T,{store:eM,children:Q.jsx(cI,{children:Q.jsxs(h3,{children:[Q.jsx(hI,{}),Q.jsx(wI,{children:Q.jsxs(f3,{children:[Q.jsx(Ca,{path:"/PokeApp-VL/",element:Q.jsx(K5,{})}),Q.jsx(Ca,{path:"/PokeApp-VL/about",element:Q.jsx(kI,{})}),Q.jsx(Ca,{path:"/*",element:Q.jsx(X5,{})})]})}),Q.jsx(oI,{})]})})}),FS=document.getElementById("root");if(!FS)throw new Error("Failed to find the root element");const nM=zw(FS);nM.render(Q.jsx(tM,{}));
